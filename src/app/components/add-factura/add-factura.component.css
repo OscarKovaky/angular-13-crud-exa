@@ -1,0 +1,14 @@
+.submit-form {
+    max-width: 400px;
+    margin: auto;
+  }
+
+  /* Estilo para campos inválidos */
+.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+/* Estilo para campos válidos */
+.ng-valid {
+  border: 1px solid green;
+}

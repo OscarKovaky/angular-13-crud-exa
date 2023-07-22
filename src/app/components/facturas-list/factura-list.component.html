@@ -1,0 +1,36 @@
+
+    <div class="container">
+        <div class="topnav">
+            <div class="search-container">
+                <input type="text"   
+                placeholder="Search..Id" 
+                [(ngModel)]='facturaId' 
+                name="facturaId">
+                <button class="btn btn-outline-secondary" 
+                *ngIf="!isDataInInputSearch; else elseBlock"
+                (click)="SearchData()" >Buscar</button>
+                <ng-template #elseBlock>
+                    <button class="btn btn-outline-secondary" 
+                    (click)="reloadComponet()" ><i class="fa fa-close"></i></button>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+<br>
+<br>
+<div class="center">
+    <div class="container">
+    <tr>
+        <th>facturaId</th>
+        <th>Fecha</th>
+        <th>Monto</th>
+        <th>Usuario</th>
+      </tr>
+    <tr *ngFor="let factura of list;">
+        <td>{{factura.facturaId}}</td>
+        <td>{{factura.fecha}}</td>
+        <td>{{factura.monto}}</td>
+        <td>{{factura.personaId}}</td>
+    </tr>
+</div>
+</div>

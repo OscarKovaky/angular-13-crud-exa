@@ -1,0 +1,71 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="ngModel">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            required
+            [(ngModel)]="user.nombre"
+            name="nombre"    
+          />
+          <div *ngIf="user.nombre?.touched && user.nombre?.invalid" class="error-message">
+            Campo requerido.
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="apellidoPaterno">Apellido Paterno</label>
+            <input
+              type="text"
+              class="form-control"
+              id="apellidoPaterno"
+              required
+              [(ngModel)]="user.apellidoPaterno"
+              name="apellidoPaterno"
+            />
+            <div *ngIf="user.apellidoPaterno?.touched && user.apellidoPaterno?.invalid" class="error-message">
+              Campo requerido.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="apellidoMaterno">Apellido Materno</label>
+            <input
+              type="text"
+              class="form-control"
+              id="apellidoMaterno"
+              required
+              [(ngModel)]="user.apellidoMaterno"
+              name="apellidoMaterno"
+            />
+            <div *ngIf="user.apellidoMaterno?.touched && user.apellidoMaterno?.invalid" class="error-message">
+              Campo requerido.
+            </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="identificacion">Identificacion</label>
+          <input
+            class="form-control"
+            id="identificacion"
+            required
+            [(ngModel)]="user.identificacion"
+            name="identificacion"
+          />
+          <div *ngIf="user.identificacion?.touched && user.identificacion?.invalid" class="error-message">
+            Campo requerido.
+          </div>
+        </div>
+  
+        <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Usuario creado con exito!</h4>
+        <button class="btn btn-success" (click)="newTutorial()">Agregar Nuevo</button>
+      </div>
+    </div>
+  </div>
